@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.android2021task5.ui.main.MainFragment"
+        android:label="main_fragment"
+        tools:layout="@layout/main_fragment" >
+        <action
+            android:id="@+id/action_mainFragment_to_catImageFragment"
+            app:destination="@id/catImageFragment"
+            app:enterAnim="@anim/card_flip_left_in"
+            app:exitAnim="@android:anim/fade_out" />
+    </fragment>
+    <fragment
+        android:id="@+id/catImageFragment"
+        android:name="com.example.android2021task5.ui.main.CatImageFragment"
+        android:label="fragment_cat_image"
+        tools:layout="@layout/fragment_cat_image" >
+        <argument android:name="imgUrl"
+            app:argType="string" />
+    </fragment>
+</navigation>
